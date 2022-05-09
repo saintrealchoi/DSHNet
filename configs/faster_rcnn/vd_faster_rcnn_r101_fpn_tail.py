@@ -90,7 +90,7 @@ test_cfg = dict(
 # dataset settings
 dataset_type = 'CocoDataset'
 classes = ('pedestrian', 'people', 'bicycle', 'car', 'van', 'truck', 'tricycle', 'awning-tricycle', 'bus', 'motor')
-data_root = '/home/omnisky/ywp/data/vd/'
+data_root = 'data/VisDrone/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -182,19 +182,19 @@ data = dict(
     train=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'VisDrone2019-DET-train/coco_annotations/train.json',
+        ann_file=data_root + 'annotations/train.json',
         img_prefix=data_root + 'VisDrone2019-DET-train/images/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'VisDrone2019-DET-val/coco_annotations/val.json',
+        ann_file=data_root + 'annotations/val.json',
         img_prefix=data_root + 'VisDrone2019-DET-val/images/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         classes=classes,
-        ann_file=data_root + 'VisDrone2019-DET-val/coco_annotations/val.json',
+        ann_file=data_root + 'annotations/val.json',
         img_prefix=data_root + 'VisDrone2019-DET-val/images/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox')
